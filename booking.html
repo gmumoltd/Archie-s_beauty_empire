@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking | Archie's Beauty Empire</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/styles/style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/images/logo.png" alt="Logo" onerror="this.style.display='none'"/>
+        <div class="brand-text">Archie's Beauty Empire<span>Nairobi · Kenya</span></div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <div class="cart-icon-wrapper ms-3" onclick="toggleCart()">
+              <i class="fas fa-shopping-bag"></i>
+              <span class="cart-badge" id="cartCount">0</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <p class="section-subtitle">Reserve Your Spot</p>
+      <h1 class="section-title">Book an Appointment</h1>
+      <div class="divider mx-auto"></div>
+      <p style="color:var(--grey); font-size:0.9rem;">Add services to your cart, then fill in your details below</p>
+    </div>
+  </div>
+
+  <!-- BOOKING SECTION -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- LEFT: Quick Add to Cart -->
+        <div class="col-lg-5">
+          <p class="section-subtitle">Step 1</p>
+          <h3 class="section-title" style="font-size:1.6rem;">Select Your Services</h3>
+          <div class="divider divider-left"></div>
+
+          <div class="row g-3 mt-2">
+            <div class="col-6">
+              <div class="service-card text-center p-3">
+                <i class="fas fa-cut fa-2x mb-2" style="color:var(--gold);"></i>
+                <p style="font-size:0.85rem; color:#ccc; margin-bottom:6px;">Hair Styling</p>
+                <small class="price-tag">KES 800</small>
+                <button class="btn-gold w-100 mt-2" style="font-size:0.75rem; padding:7px;" onclick="addToCart('Hair Styling', 800)">+ Add</button>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="service-card text-center p-3">
+                <i class="fas fa-hand-sparkles fa-2x mb-2" style="color:var(--gold);"></i>
+                <p style="font-size:0.85rem; color:#ccc; margin-bottom:6px;">Nail Art</p>
+                <small class="price-tag">KES 500</small>
+                <button class="btn-gold w-100 mt-2" style="font-size:0.75rem; padding:7px;" onclick="addToCart('Nail Art & Care', 500)">+ Add</button>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="service-card text-center p-3">
+                <i class="fas fa-spa fa-2x mb-2" style="color:var(--gold);"></i>
+                <p style="font-size:0.85rem; color:#ccc; margin-bottom:6px;">Facial</p>
+                <small class="price-tag">KES 1,200</small>
+                <button class="btn-gold w-100 mt-2" style="font-size:0.75rem; padding:7px;" onclick="addToCart('Facial & Skin Care', 1200)">+ Add</button>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="service-card text-center p-3">
+                <i class="fas fa-wand-magic-sparkles fa-2x mb-2" style="color:var(--gold);"></i>
+                <p style="font-size:0.85rem; color:#ccc; margin-bottom:6px;">Makeup</p>
+                <small class="price-tag">KES 1,500</small>
+                <button class="btn-gold w-100 mt-2" style="font-size:0.75rem; padding:7px;" onclick="addToCart('Makeup', 1500)">+ Add</button>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="service-card text-center p-3">
+                <i class="fas fa-hands fa-2x mb-2" style="color:var(--gold);"></i>
+                <p style="font-size:0.85rem; color:#ccc; margin-bottom:6px;">Massage</p>
+                <small class="price-tag">KES 2,000</small>
+                <button class="btn-gold w-100 mt-2" style="font-size:0.75rem; padding:7px;" onclick="addToCart('Body Massage', 2000)">+ Add</button>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="service-card text-center p-3">
+                <i class="fas fa-eye fa-2x mb-2" style="color:var(--gold);"></i>
+                <p style="font-size:0.85rem; color:#ccc; margin-bottom:6px;">Lashes</p>
+                <small class="price-tag">KES 700</small>
+                <button class="btn-gold w-100 mt-2" style="font-size:0.75rem; padding:7px;" onclick="addToCart('Lashes & Brows', 700)">+ Add</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-card mt-4">
+            <h6 style="color:var(--gold); font-family:var(--font-heading); margin-bottom:12px;">Cart Summary</h6>
+            <div id="cartSummaryInline">
+              <p style="color:var(--grey); font-size:0.85rem;">No services added yet.</p>
+            </div>
+            <div id="cartSummaryTotal" style="display:none; border-top:1px solid var(--border); padding-top:12px; margin-top:12px;">
+              <div style="display:flex; justify-content:space-between; color:var(--gold); font-weight:bold;">
+                <span>Total</span>
+                <span id="inlineCartTotal">KES 0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Booking Form -->
+        <div class="col-lg-7">
+          <p class="section-subtitle">Step 2</p>
+          <h3 class="section-title" style="font-size:1.6rem;">Your Details</h3>
+          <div class="divider divider-left"></div>
+
+          <div id="bookingSuccess" class="alert-gold mb-4" style="display:none;">
+            <i class="fas fa-check-circle me-2"></i>
+            <strong>Booking Received!</strong> We'll confirm your appointment via SMS or WhatsApp shortly.
+          </div>
+
+          <div class="mt-3">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-group-gap">
+                  <label class="form-label-custom">Full Name *</label>
+                  <input type="text" class="form-control-dark" id="bkName" placeholder="e.g. Amina Wanjiku" required/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group-gap">
+                  <label class="form-label-custom">Phone Number *</label>
+                  <input type="tel" class="form-control-dark" id="bkPhone" placeholder="07XX XXX XXX" required/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group-gap">
+                  <label class="form-label-custom">Email Address</label>
+                  <input type="email" class="form-control-dark" id="bkEmail" placeholder="your@email.com"/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group-gap">
+                  <label class="form-label-custom">Branch *</label>
+                  <select class="form-control-dark" id="bkBranch" required>
+                    <option value="">-- Select Branch --</option>
+                    <option>Westlands Branch</option>
+                    <option>Karen Branch</option>
+                    <option>Kilimani Branch</option>
+                    <option>Lavington Branch</option>
+                    <option>Ngong Road Branch</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group-gap">
+                  <label class="form-label-custom">Preferred Date *</label>
+                  <input type="date" class="form-control-dark" id="bkDate" required/>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group-gap">
+                  <label class="form-label-custom">Preferred Time *</label>
+                  <select class="form-control-dark" id="bkTime" required>
+                    <option value="">-- Select Time --</option>
+                    <option>8:00 AM</option>
+                    <option>9:00 AM</option>
+                    <option>10:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>12:00 PM</option>
+                    <option>1:00 PM</option>
+                    <option>2:00 PM</option>
+                    <option>3:00 PM</option>
+                    <option>4:00 PM</option>
+                    <option>5:00 PM</option>
+                    <option>6:00 PM</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group-gap">
+                  <label class="form-label-custom">Special Requests / Notes</label>
+                  <textarea class="form-control-dark" id="bkNotes" rows="3" placeholder="E.g. I'm allergic to certain products, first time client..."></textarea>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn-gold w-100" style="padding:14px;" onclick="submitBooking()">
+                  <i class="fas fa-calendar-check me-2"></i> Confirm Booking
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Policies -->
+          <div class="mt-4">
+            <ul class="features-list">
+              <li>Cancellations must be made at least 2 hours in advance</li>
+              <li>We'll confirm via SMS/WhatsApp within 30 minutes</li>
+              <li>Walk-ins also welcome at all branches</li>
+              <li>Group bookings? Call us for special rates</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="brand-text mb-3">Archie's Beauty Empire<span>Nairobi · Kenya</span></div>
+          <p>Nairobi's premier salon chain.</p>
+          <div class="mt-3">
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h6>Pages</h6>
+          <ul class="ps-0">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6>Hours</h6>
+          <p>Mon – Fri: 8am – 8pm</p>
+          <p>Saturday: 8am – 7pm</p>
+          <p>Sunday: 9am – 6pm</p>
+        </div>
+        <div class="col-md-3">
+          <h6>Contact</h6>
+          <p><i class="fas fa-phone me-2" style="color:var(--red);"></i>0700 100 000</p>
+          <p><i class="fas fa-envelope me-2" style="color:var(--red);"></i>hello@archiesbeauty.co.ke</p>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p>&copy; 2024 Archie's Beauty Empire. All rights reserved. | Made with ♥ in Nairobi</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h5>My Cart</h5>
+      <button class="cart-close-btn" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="cartItems">
+      <p style="color:var(--grey); font-size:0.85rem; text-align:center; margin-top:30px;">Your cart is empty.</p>
+    </div>
+    <div class="cart-total" id="cartTotalSection" style="display:none;">
+      <span>Total</span>
+      <span id="cartTotalPrice">KES 0</span>
+    </div>
+    <button class="btn-gold w-100 mt-3" onclick="checkout()" id="checkoutBtn" style="display:none;">Checkout</button>
+    <a href="booking.html" class="btn-outline-gold w-100 mt-2 d-block text-center">Book Appointment</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/styles/cart.js"></script>
+  <script>
+    // Booking form submission
+    function submitBooking() {
+      const name = document.getElementById('bkName').value.trim();
+      const phone = document.getElementById('bkPhone').value.trim();
+      const branch = document.getElementById('bkBranch').value;
+      const date = document.getElementById('bkDate').value;
+      const time = document.getElementById('bkTime').value;
+
+      if (!name || !phone || !branch || !date || !time) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      document.getElementById('bookingSuccess').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('bookingSuccess').offsetTop - 100, behavior: 'smooth' });
+
+      // Clear cart after booking
+      cart = [];
+      updateCartUI();
+    }
+  </script>
+</body>
+</html>
