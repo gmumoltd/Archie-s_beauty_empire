@@ -326,7 +326,6 @@ img {
     width: 80px;
     height: 1px;
     background: var(--gold);
-    background: var(--purple) margin-bottom: 30px;
 }
 
 .hero-stats {
