@@ -750,6 +750,116 @@
             font-size: 0.85rem;
             border-radius: 0;
         }
+        /* --- Tablet & Mobile (Up to 768px) --- */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-stats {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .hero-desc {
+                max-width: 100%;
+            }
+            /* Fixed typo: cart-sidebar */
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            /* Carousel fix for mobile */
+            .carousel-container {
+                height: 300px;
+                /* Or 50vh */
+                width: 100%;
+            }
+            /* Navigation tweaks */
+            .navbar-brand .brand-text {
+                font-size: 1rem;
+            }
+            /* Add a selector here if these were meant for something specific */
+            .nav-link-item {
+                color: var(--black);
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+        }
+        /* --- Small Phones (Up to 480px) --- */
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .carousel-container {
+                height: 250px;
+                /* Slightly shorter for small screens */
+            }
+        }
+        /* --- These styles work for all sizes (moved outside media query) --- */
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--gold);
+            color: var(--black);
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-radius: 50%;
+            margin-bottom: 12px;
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            color: #bbb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .features-list li::before {
+            content: "✦";
+            color: var(--gold);
+            font-size: 0.7rem;
+        }
+        /* Star Rating stays the same */
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 6px;
+            justify-content: flex-end;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            font-size: 1.6rem;
+            color: #444;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .star-rating input:checked~label,
+        .star-rating label:hover,
+        .star-rating label:hover~label {
+            color: var(--gold);
+        }
+        /* --- Alert / Notice --- */
+        .alert-gold {
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 14px 18px;
+            font-size: 0.85rem;
+            border-radius: 0;
+        }
         /* --- Responsive Tweaks --- */
         @media (max-width: 768px) {
             .hero-title {
@@ -762,118 +872,20 @@
             .section-title {
                 font-size: 1.7rem;
             }
-            .car t-sidebar {
+            .cart-sidebar {
                 width: 100%;
                 right: -100%;
             }
-            .her o-desc {
+            .hero-desc {
                 max-width: 100%;
             }
-            @media (max-width: 480px) {
-                .her o-title {
-                    font-size: 1.8rem;
-                }
-                .nav bar-brand .brand-text {
-                    font-size: 1rem;
-                }
+        }
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
             }
             .navbar-brand .brand-text {
                 font-size: 1rem;
-            }
-            color: var(--black);
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            /* --- Booking steps --- */
-            .step-badge {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: var(--gold);
-                color: var(--black);
-                font-weight: bold;
-                font-size: 0.9rem;
-                border-radius: 50%;
-                margin-bottom: 12px;
-            }
-            /* --- Features List --- */
-            .features-list {
-                list-style: none;
-                padding: 0;
-            }
-            .features-list li {
-                padding: 8px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-                font-size: 0.9rem;
-                color: #bbb;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-            .features-list li::before {
-                content: "✦";
-                color: var(--gold);
-                font-size: 0.7rem;
-            }
-            /* --- Rating Stars Input --- */
-            .star-rating {
-                display: flex;
-                flex-direction: row-reverse;
-                gap: 6px;
-                justify-content: flex-end;
-            }
-            .star-rating input {
-                display: none;
-            }
-            .star-rating label {
-                font-size: 1.6rem;
-                color: #444;
-                cursor: pointer;
-                transition: color 0.2s;
-            }
-            .star-rating input:checked~label,
-            .star-rating label:hover,
-            .star-rating label:hover~label {
-                color: var(--gold);
-            }
-            /* --- Alert / Notice --- */
-            .alert-gold {
-                background: rgba(201, 168, 76, 0.1);
-                border: 1px solid var(--gold);
-                color: var(--gold);
-                padding: 14px 18px;
-                font-size: 0.85rem;
-                border-radius: 0;
-            }
-            /* --- Responsive Tweaks --- */
-            @media (max-width: 768px) {
-                .hero-title {
-                    font-size: 2.2rem;
-                }
-                .hero-stats {
-                    gap: 20px;
-                    flex-wrap: wrap;
-                }
-                .section-title {
-                    font-size: 1.7rem;
-                }
-                .cart-sidebar {
-                    width: 100%;
-                    right: -100%;
-                }
-                .hero-desc {
-                    max-width: 100%;
-                }
-            }
-            @media (max-width: 480px) {
-                .hero-title {
-                    font-size: 1.8rem;
-                }
-                .navbar-brand .brand-text {
-                    font-size: 1rem;
-                }
             }
         }
     }
